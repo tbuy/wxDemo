@@ -1,0 +1,21 @@
+<view class="music">
+  <view class="tab">
+    <view class="tabItem" wx:for="{{tabArray}}" wx:key="{{item.id}}">{{item.name}}</view>
+  </view>
+  <view class="content">
+    <swiper>
+        <swiper-item>
+          <include src="musicInfo.wxml" />
+        </swiper-item>
+        <swiper-item>
+          <include src="musicPlay.wxml" />
+        </swiper-item>
+        <swiper-item>
+          <include src="musicPlaylist.wxml" />
+        </swiper-item>
+    </swiper>
+  </view>
+  <view class="player">
+   
+  </view>
+</view>

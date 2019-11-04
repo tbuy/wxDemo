@@ -1,0 +1,15 @@
+.color_one {
+  color: #C1B4AD;
+}
+.color_two {
+  color: #AA998F;
+}
+.color_three {
+  color: #877E79;
+}
+.color_four {
+  color: #6D625C;
+}
+.color_five {
+  color: #3C3633;
+}

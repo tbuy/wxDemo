@@ -1,0 +1,3 @@
+<view>
+  <view bindtap="goMusic">音乐demo</view>
+</view>
