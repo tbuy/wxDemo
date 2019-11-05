@@ -1,1 +1,20 @@
-<view class="musicInfo">111</view>
+<view class="musicInfo">
+  <view class="banner">
+    <swiper indicator-dots="true" indicator-color="#fff" indicator-active-color="#666" autoplay="true" class="banner-swiper">
+      <swiper-item class="banner-item">
+        <image src="/images/banner1.png" lazy-load mode="aspectFit" class="banner-image"></image>
+      </swiper-item>
+      <swiper-item class="banner-item">
+        <image src="/images/banner2.png" lazy-load mode="aspectFit" class="banner-image"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="menu">
+    <view class="menu-item">
+      <image src="/images/banner1.png" class="menu-image"></image>
+      <view>每日精选</view>
+    </view>
+  </view>
+  <view class="albumList">
+  </view>
+</view>

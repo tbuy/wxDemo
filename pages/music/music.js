@@ -5,24 +5,35 @@ Page({
    * 页面的初始数据
    */
   data: {
+    //tab选中
+    selectedId: 0,
+    //swiper选中
+    currentId: 0,
     tabArray: [{
         id: 0,
         name: '音乐推荐',
-        selected: false
       },
       {
         id: 1,
         name: '播放器',
-        selected: true
       },
       {
         id: 2,
         name: '播放列表',
-        selected: false
       },
     ]
   },
-
+  selectedTab(e){
+    this.setData({
+      selectedId: e.target.dataset.id
+    })
+  },
+  selectedItem(e){
+    this.setData({
+      currentId: e.detail.current,
+      selectedId: e.detail.current
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

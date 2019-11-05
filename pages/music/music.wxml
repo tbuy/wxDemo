@@ -1,9 +1,9 @@
 <view class="music">
   <view class="tab">
-    <view class="tabItem" wx:for="{{tabArray}}" wx:key="{{item.id}}">{{item.name}}</view>
+    <view class="tabItem {{selectedId == item.id ? 'selected' : ''}}" wx:for="{{tabArray}}" wx:key="{{item.id}}" bindtap="selectedTab" data-id="{{item.id}}">{{item.name}}</view>
   </view>
   <view class="content">
-    <swiper>
+    <swiper bindchange="selectedItem" current="{{selectedId}}">
         <swiper-item>
           <include src="musicInfo.wxml" />
         </swiper-item>
