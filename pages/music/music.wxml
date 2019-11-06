@@ -17,12 +17,13 @@
   </view>
   <view class="player-bottom">
     <view style="display: flex;">
-      <image src="/images/album1.png" class="music-list-image"></image>
-      <view>jjj</view>
+      <image src="{{musiclist[playingMusicIndex].album}}" class="music-list-image"></image>
+      <view>{{musiclist[playingMusicIndex].name}}</view>
     </view>
     <view style="display: flex;">
       <image src="/images/pre.png" class="icon" bindtap="musicPre"></image>
-      <image src="/images/play.png" class="icon" bindtap="musicPlay"></image>
+      <image src="/images/pause.png" class="icon" bindtap="musicPause" wx:if="{{playState == 1}}"></image>
+      <image src="/images/play.png" class="icon" bindtap="musicPlay" wx:else></image>
       <image src="/images/next.png" class="icon" bindtap="musicNext"></image>
     </view>
   </view>

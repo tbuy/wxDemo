@@ -6,10 +6,11 @@ Page({
    */
   data: {
     //tab选中
-    selectedId: 0,
+    selectedId: 2,
     //swiper选中
-    currentId: 0,
+    currentId: 2,
     height: 0,
+    //tab栏
     tabArray: [{
         id: 0,
         name: '音乐推荐',
@@ -23,6 +24,7 @@ Page({
         name: '播放列表',
       },
     ],
+    //入口栏
     navlist: [
       {
         id: 1,
@@ -40,6 +42,7 @@ Page({
         name: '精选专辑'
       },
     ],
+    //音乐列表
     musiclist: [
       {
         id: 1,
@@ -60,7 +63,11 @@ Page({
         album: '/images/album3.png',
         image: '/images/disk3.png'
       }
-    ]
+    ],
+    //正在播放的音乐的ID
+    playingMusicIndex: 0,
+    //播放状态 1 播放 2 暂停 3 停止
+    playState: 3
   },
   selectedTab(e){
     this.setData({
@@ -79,23 +86,71 @@ Page({
   sliderChanging(e){
     console.log(2,e)
   },
+  //音乐实例
   musicPlayer: null,
   //音乐初始化
   musicInit(){
     this.musicPlayer = wx.createInnerAudioContext();
-    this.musicPlayer.src = this.data.musiclist[0].src;
   },
   //播放音乐
   musicPlay(){
+    this.musicPlayer.src = this.data.musiclist[this.data.playingMusicIndex].src;
     this.musicPlayer.play()
+    this.setData({
+      playState: 1
+    })
+  },
+  //暂停音乐
+  musicPause(){
+    this.musicPlayer.pause()
+    this.setData({
+      playState: 2
+    })
+  },
+  //停止音乐
+  musicStop(){
+    this.musicPlayer.stop()
+    this.setData({
+      playState: 3
+    })
   },
   //上一首
   musicPre(){
-
+    if (this.data.playingMusicIndex == 0){
+      wx.showToast({
+        title: '已经是第一首音乐',
+        icon: 'none'
+      })
+    }else{
+      this.musicStop()
+      this.setData({
+        playingMusicIndex: this.data.playingMusicIndex - 1
+      })
+      this.musicPlay()
+    }
   },
   //下一首
   musicNext(){
-
+    if (this.data.playingMusicIndex == this.data.musiclist.length - 1) {
+      wx.showToast({
+        title: '已经是最后一首音乐',
+        icon: 'none'
+      })
+    } else {
+      this.musicStop()
+      this.setData({
+        playingMusicIndex: this.data.playingMusicIndex + 1
+      })
+      this.musicPlay()
+    }
+  },
+  //选择音乐
+  musicSelect(e){
+    this.musicStop()
+    this.setData({
+      playingMusicIndex: e.currentTarget.dataset.index
+    })
+    this.musicPlay()
   },
   /**
    * 生命周期函数--监听页面加载

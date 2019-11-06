@@ -1,5 +1,5 @@
 <view class="music-list">
-  <view wx:for="{{musiclist}}" wx:key="{{item.id}}" bindtap="playMusic" class="music-item">
+  <view wx:for="{{musiclist}}" wx:key="{{item.id}}" bindtap="musicSelect" class="music-item" data-index="{{index}}">
     <image src="{{item.album}}" class="music-list-image"></image>
     <view>{{item.name}}</view>
   </view>
