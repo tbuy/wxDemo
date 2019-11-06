@@ -1,1 +1,6 @@
-<view>333</view>
+<view class="music-list">
+  <view wx:for="{{musiclist}}" wx:key="{{item.id}}" bindtap="playMusic" class="music-item">
+    <image src="{{item.album}}" class="music-list-image"></image>
+    <view>{{item.name}}</view>
+  </view>
+</view>

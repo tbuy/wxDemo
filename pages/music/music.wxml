@@ -2,20 +2,28 @@
   <view class="tab">
     <view class="tabItem {{selectedId == item.id ? 'selected' : ''}}" wx:for="{{tabArray}}" wx:key="{{item.id}}" bindtap="selectedTab" data-id="{{item.id}}">{{item.name}}</view>
   </view>
-  <view class="content">
+  <view class="content" >
     <swiper bindchange="selectedItem" current="{{selectedId}}">
-        <swiper-item>
-          <include src="musicInfo.wxml" />
-        </swiper-item>
-        <swiper-item>
-          <include src="musicPlay.wxml" />
-        </swiper-item>
-        <swiper-item>
-          <include src="musicPlaylist.wxml" />
-        </swiper-item>
+      <swiper-item>
+        <include src="musicInfo.wxml" />
+      </swiper-item>
+      <swiper-item>
+        <include src="musicPlay.wxml" />
+      </swiper-item>
+      <swiper-item>
+        <include src="musicPlaylist.wxml" />
+      </swiper-item>
     </swiper>
   </view>
-  <view class="player">
-   
+  <view class="player-bottom">
+    <view style="display: flex;">
+      <image src="/images/album1.png" class="music-list-image"></image>
+      <view>jjj</view>
+    </view>
+    <view style="display: flex;">
+      <image src="/images/pre.png" class="icon" bindtap="musicPre"></image>
+      <image src="/images/play.png" class="icon" bindtap="musicPlay"></image>
+      <image src="/images/next.png" class="icon" bindtap="musicNext"></image>
+    </view>
   </view>
 </view>

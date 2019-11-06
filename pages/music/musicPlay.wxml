@@ -1,1 +1,13 @@
-<view>222</view>
+<view class="musicPlay">
+  <view class="music-title">音乐1</view>
+  <view class="diskbox">
+  <image src="/images/disk1.png" class="disk"></image>
+  </view>
+  <view class="playerControl">
+    <view class="control-time">0:00</view>
+    <view class="palyerSlider">
+      <slider value="30" bindchange="sliderChange" bindchanging="sliderChanging" block-size="18"/>
+    </view>
+    <view class="control-time">0:00</view>
+  </view>
+</view>

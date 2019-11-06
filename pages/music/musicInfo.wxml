@@ -10,11 +10,19 @@
     </swiper>
   </view>
   <view class="menu">
-    <view class="menu-item">
-      <image src="/images/banner1.png" class="menu-image"></image>
-      <view>每日精选</view>
+    <view class="menu-item" wx:for="{{navlist}}" wx:key="{{item.id}}">
+      <image src="{{item.icon}}" class="menu-image"></image>
+      <view>{{item.name}}</view>
     </view>
   </view>
   <view class="albumList">
+    <view class="ablum-title">热门音乐</view>
+    <view class="album-wrap">
+      <view wx:for="{{musiclist}}" wx:key="{{item.id}}" class="album-item">
+        <image src="{{item.album}}" class="album-image"></image>
+        <view>{{item.name}}</view>
+      </view>
+      <view style="width: 30%;height:0"></view>
+    </view>
   </view>
 </view>
