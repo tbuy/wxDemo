@@ -14,7 +14,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.1",
-	"appid": "wx481f52562354d497",
+	"appid": "wx887d9a75025c7e56",
 	"projectname": "miniprogram-1",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -50,6 +50,13 @@
 					"id": -1,
 					"name": "music",
 					"pathName": "pages/music/music",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "canvas",
+					"pathName": "pages/canvas/canvas",
 					"scene": null
 				}
 			]

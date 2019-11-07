@@ -1,3 +1,5 @@
 <view>
   <view bindtap="goMusic">音乐demo</view>
+  <view bindtap="goMap">地图demo</view>
+  <view bindtap="goCanvas">canvas</view>
 </view>
